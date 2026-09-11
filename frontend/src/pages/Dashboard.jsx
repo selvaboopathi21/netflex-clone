@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { clearSession } from '../auth';
 
+const TV_API_URL = import.meta.env.VITE_TV_API_URL || 'https://api.tvmaze.com/shows';
+
 function Dashboard({ onLogout }) {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
@@ -17,7 +19,7 @@ function Dashboard({ onLogout }) {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get('https://api.tvmaze.com/shows');
+        const response = await axios.get(TV_API_URL);
         // Taking first 12 items for grid layout
         setMovies(response.data.slice(0, 12));
       } catch (error) {
