@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #141414;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+.language-selector{
+    display: flex;
+    align-items: center;
+   gap: 1rem;
+}

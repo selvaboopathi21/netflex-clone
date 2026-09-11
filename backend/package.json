@@ -1,0 +1,16 @@
+{
+  "name": "netflix-login-backend",
+  "version": "1.0.0",
+  "description": "Mock authentication backend for the Netflix login clone",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.22.2",
+    "nodemon": "^3.1.14"
+  }
+}
