@@ -50,8 +50,28 @@ function Login({ setLoggedIn }) {
   };
 
   return (
-    <div className="grid min-h-screen place-items-center bg-black text-white">
-      <form onSubmit={handleLogin} className="flex flex-col gap-4 bg-zinc-900 p-8 rounded-md w-80 shadow-lg">
+    <main className="auth-page relative min-h-screen overflow-hidden text-white">
+      <div className="auth-page__shade absolute inset-0" aria-hidden="true" />
+
+      <header className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-14">
+        <button
+          type="button"
+          onClick={() => navigate('/')}
+          className="text-3xl font-black tracking-tighter text-red-600 transition duration-200 hover:scale-105 sm:text-4xl"
+        >
+          NETFLIX
+        </button>
+        <button
+          type="button"
+          onClick={() => navigate('/register')}
+          className="rounded bg-red-600 px-5 py-2.5 text-sm font-bold transition duration-200 hover:-translate-y-1 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-black"
+        >
+          Sign Up
+        </button>
+      </header>
+
+      <section className="relative z-10 flex min-h-[calc(100vh-96px)] w-full flex-col items-center justify-center px-6 pb-10">
+      <form onSubmit={handleLogin} className="flex w-full max-w-md flex-col gap-4 rounded-md bg-black/80 p-8 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm sm:p-10">
         <h2 className="text-2xl font-bold mb-2">Sign In</h2>
 
         <input 
@@ -77,10 +97,11 @@ function Login({ setLoggedIn }) {
           Sign In
         </button>
       </form>
-      <p className="text-sm text-zinc-400">
+      <p className="mt-5 text-sm text-zinc-400">
         New to Netflix? <a href="/register" className="text-white hover:underline transition duration-200 hover:-translate-y-0.5 inline-block">Sign up now</a>
       </p>
-    </div>
+      </section>
+    </main>
   );
 }
 

@@ -51,7 +51,7 @@ function Register() {
         </button>
       </header>
 
-      <section className="relative z-10 flex min-h-[calc(100vh-96px)] items-center justify-center px-6 pb-10">
+      <section className="relative z-10 flex min-h-[calc(100vh-96px)] w-full flex-col items-center justify-center px-6 pb-10">
         <form onSubmit={handleRegister} className="flex w-full max-w-md flex-col gap-4 rounded-md bg-black/80 p-8 shadow-2xl ring-1 ring-white/10 backdrop-blur-sm sm:p-10">
         <h2 className="text-2xl font-bold">Sign Up</h2>
         <input 

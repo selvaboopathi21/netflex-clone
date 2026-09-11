@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    background: #080808;
+}
+
+body {
+    min-width: 320px;
+    background: #080808;
+    color: #f4f4f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+    font: inherit;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -42,4 +58,32 @@
     background:
         linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.58) 45%, rgba(0, 0, 0, 0.9) 100%),
         linear-gradient(90deg, rgba(0, 0, 0, 0.58), transparent 55%, rgba(0, 0, 0, 0.58));
+}
+
+.dashboard-page {
+    background:
+        linear-gradient(180deg, rgba(8, 8, 8, 0.78) 0%, #080808 30rem),
+        linear-gradient(90deg, rgba(8, 8, 8, 0.6), transparent 50%, rgba(8, 8, 8, 0.6)),
+        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2400&q=70');
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+@media (max-width: 640px) {
+    .landing-page,
+    .auth-page,
+    .dashboard-page {
+        background-attachment: scroll;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
