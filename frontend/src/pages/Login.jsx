@@ -31,7 +31,7 @@ function Login({ setLoggedIn }) {
 
     try {
       // Fixed: Payload lowercase 'email' matching backend
-      const response = await axios.post('http://localhost:5000/api/login', { email, password });
+      const response = await axios.post('https://netflex-clone-5d1f.onrender.com/api/login', { email, password });
 
       if (response.status === 200) {
         setSession(normalizedEmail);
