@@ -17,3 +17,16 @@
     align-items: center;
    gap: 1rem;
 }
+
+.landing-page {
+    background-color: #080808;
+    background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2400&q=85');
+    background-position: center;
+    background-size: cover;
+}
+
+.landing-page__shade {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.28) 42%, rgba(0, 0, 0, 0.9) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.55), transparent 55%, rgba(0, 0, 0, 0.45));
+}

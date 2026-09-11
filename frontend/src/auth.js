@@ -9,9 +9,9 @@ export function getUsers() {
   }
 }
 
-export function saveUser(email, password) {
+export function saveUser(name, email, password) {
   const users = getUsers().filter((user) => user.email !== email);
-  localStorage.setItem(USERS_KEY, JSON.stringify([...users, { email, password }]));
+  localStorage.setItem(USERS_KEY, JSON.stringify([...users, { name, email, password }]));
 }
 
 export function findUser(email, password) {

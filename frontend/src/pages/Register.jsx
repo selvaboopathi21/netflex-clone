@@ -4,6 +4,7 @@ import { getUsers, saveUser } from '../auth';
 
 function Register() {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -12,14 +13,20 @@ function Register() {
     e.preventDefault();
     setMessage("");
 
+    const normalizedName = name.trim();
     const normalizedEmail = email.trim().toLowerCase();
+
+    if (!normalizedName || !normalizedEmail || !password.trim()) {
+      setMessage("Please fill in your name, email, and password.");
+      return;
+    }
 
     if (getUsers().some((user) => user.email === normalizedEmail)) {
       setMessage("An account with this email already exists.");
       return;
     }
 
-    saveUser(normalizedEmail, password);
+    saveUser(normalizedName, normalizedEmail, password);
     navigate('/login', { state: { message: "Registration successful. Please sign in." } });
   };
 
@@ -27,6 +34,11 @@ function Register() {
     <div className="grid min-h-screen place-items-center bg-black text-white">
       <form onSubmit={handleRegister} className="flex flex-col gap-4 bg-zinc-900 p-8 rounded-md w-80">
         <h2 className="text-2xl font-bold">Sign Up</h2>
+        <input 
+          value={name} onChange={(e) => setName(e.target.value)} 
+          type="text" placeholder="Your name" required 
+          className="p-3 bg-zinc-800 rounded text-white border border-zinc-700 transition duration-200 focus:outline-none focus:border-red-600 focus:-translate-y-0.5"
+        />
         <input 
           value={email} onChange={(e) => setEmail(e.target.value)} 
           type="email" placeholder="Email address" required 
