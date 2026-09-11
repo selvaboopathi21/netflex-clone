@@ -75,7 +75,14 @@ function Register() {
         </button>
       </form>
       <p className="mt-5 text-sm text-zinc-400">
-        Already have an account? <a href="/login" className="text-white hover:underline transition duration-200 hover:-translate-y-0.5 inline-block">Sign in</a>
+        Already have an account?{' '}
+        <button
+          type="button"
+          onClick={() => navigate('/login')}
+          className="inline-block text-white transition duration-200 hover:-translate-y-0.5 hover:underline"
+        >
+          Sign in
+        </button>
       </p>
       </section>
     </main>

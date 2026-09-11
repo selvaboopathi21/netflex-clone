@@ -98,7 +98,14 @@ function Login({ setLoggedIn }) {
         </button>
       </form>
       <p className="mt-5 text-sm text-zinc-400">
-        New to Netflix? <a href="/register" className="text-white hover:underline transition duration-200 hover:-translate-y-0.5 inline-block">Sign up now</a>
+        New to Netflix?{' '}
+        <button
+          type="button"
+          onClick={() => navigate('/register')}
+          className="inline-block text-white transition duration-200 hover:-translate-y-0.5 hover:underline"
+        >
+          Sign up now
+        </button>
       </p>
       </section>
     </main>
